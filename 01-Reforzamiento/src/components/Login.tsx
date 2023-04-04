@@ -60,7 +60,21 @@ export const Login = () => {
     
     }, [])
     
-    const login
+    const login = () => {
+        dispatch({
+            type: 'login',
+            payload:{
+                nombre:'Alberto',
+                username:'xk2'
+            }
+        })
+    }
+
+    const logout = () => {
+        dispatch({
+            type:'logout'
+        })
+    }
 
 
     if (validando){
@@ -82,8 +96,8 @@ export const Login = () => {
         }
         {
             (token)
-                ?<button className="btn btn-danger">Logout</button>
-                : <button className="btn btn-primary">Login</button>
+                ?<button className="btn btn-danger" onClick={logout}>Logout</button>
+                : <button className="btn btn-primary" onClick={login}>Login</button>
         }
         
     </>
